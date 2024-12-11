@@ -99,15 +99,23 @@ const styles = StyleSheet.create({
     width:"100%",
     height:"65%",
     alignItems:"center",
+    backgroundColor: "#C3E0E5", // Light blue background
+    justifyContent: "center"
   },
   map: {
     width:"95%",
     height:"100%",
+    backgroundColor: "#C3E0E5", // Light blue background
+    justifyContent: "center",
+    
   },
   locationTitle:{
     paddingTop: 10,
     fontSize:18,
     fontWeight:"bold",
     color:"#444",
+     backgroundColor: "#C3E0E5", // Light blue background
+    justifyContent: "center",
+    
   },
 });
