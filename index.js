@@ -21,7 +21,7 @@ const Header = () => (
         <TouchableOpacity style={styles.icon}>
           <Image 
             source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRENM7iPUIkWiGPQriGze2io7U_FQmRohCTmQ&s' }} 
-            style={styles.iconImage} 
+            style={styles.iconImage}  
           />
         </TouchableOpacity>
       </View>
