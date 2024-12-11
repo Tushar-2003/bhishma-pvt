@@ -25,6 +25,16 @@ export default function RootLayout() {
         }}
       />
       <Tabs.Screen 
+        name="Chat" 
+        options={{
+          title:'Chat',
+          tabBarIcon:({color, focused})=>(
+            <Ionicons name={focused?'chatbubbles-sharp' : 'chatbubbles-outline'} color={color} size={24} />
+          )
+
+        }}
+      />
+      <Tabs.Screen 
         name="Graph"
         options={{
           title:'Graph',
