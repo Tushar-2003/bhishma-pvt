@@ -9,15 +9,6 @@ import { useLocation } from "@/utils/LocationContext";
 export default function GraphScreen() {
   const { currentLocation, setCurrentLocation } = useLocation();
   
-    // Predefined variables
-    const name = "Leelam";
-    const company = "SSTC";
-    const location = "Varanasi";
-    const handleDownload = (reportType) => {
-      console.log(`${reportType} button clicked!`);
-      alert(`${reportType} download initiated!`);
-      // Replace this with the actual logic to download the respective reports
-    };
 
   return (
     <SafeAreaView>

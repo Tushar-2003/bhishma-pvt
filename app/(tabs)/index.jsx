@@ -27,7 +27,7 @@ In the Varanasi region, the Ganga River's water quality is critically impacted b
         </View>
         <View style={styles.qualityReport}>
           <Text style={styles.qualityReportTitle}>Ganga Quality report</Text>
-          {['Dissolved Oxygen', 'pH Level', 'Turbidity', 'Conductivity'].map((item, index) => (
+          {['temperature','Dissolved Oxygen', 'pH Level', 'Conductivity'].map((item, index) => (
             <View key={index} style={styles.qualityItem}>
               <Text style={styles.qualityText}>{item}</Text>
               <View style={styles.qualityBar}>
@@ -39,7 +39,7 @@ In the Varanasi region, the Ganga River's water quality is critically impacted b
         </View>
         <View style={styles.otherDataPoints}>
           <Text style={styles.otherDataPointsTitle}>Other Data Points</Text>
-          {['Dissolved Oxygen', 'Dissolved Oxygen', 'Dissolved Oxygen', 'Dissolved Oxygen'].map((item, index) => (
+          {['Bio Chemical Oxygen Demand', 'Nitrate', 'Fecal Coliform', 'Total Coliform'].map((item, index) => (
             <View key={index} style={styles.dataPoint}>
               <Text style={styles.dataPointText}>{item}</Text>
               <Text style={styles.dataPointValue}>8.2mg/L</Text>
@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: 10,
     overflow: 'hidden',
+
   },
   qualityBarFill: {
     width: '100%',

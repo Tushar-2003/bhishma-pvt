@@ -14,7 +14,7 @@ export default function ChatComponent(){
     setMessages([
       {
         _id: 1,
-        text: 'Hello! How can I assist you today?',
+        text: 'Namami Gange!, What would you like to know?',
         createdAt: new Date(),
         user: {
           _id: 2,
@@ -57,7 +57,7 @@ export default function ChatComponent(){
         createdAt: new Date(),
         user: {
           _id: 2,
-          name: 'AI Bot',
+          name: 'Bhishma Bot',
         },
       };
       setMessages((previousMessages) => GiftedChat.append(previousMessages, [errorMessage]));
