@@ -6,7 +6,7 @@ const data = require('@/utils/Dataset.json');
 
 
 const CurrentLocationDetail = () => {
-  const date = '2017-03-03'
+  const date = '2017-01-03'
   const { currentLocation } = useLocation();
   let currentcity = `${currentLocation}`;
   const cityData = data[currentcity];
@@ -19,14 +19,30 @@ const CurrentLocationDetail = () => {
       <Text style={styles.locationTitle}>{currentLocation}</Text>
       <Text style={styles.dateTitle}>({date})</Text>
 
-      <Text style={styles.dataText}>Temperature: {dataPoint.Temperature}°C</Text>
-      <Text style={styles.dataText}>pH: {dataPoint.pH}</Text>
-      <Text style={styles.dataText}>Conductivity: {dataPoint.Conductivity} µS/cm</Text>
-      <Text style={styles.dataText}>Dissolved Oxygen: {dataPoint['Dissolved Oxygen']} mg/L</Text>
-      <Text style={styles.dataText}>Bio Chemical Oxygen Demand: {dataPoint['Bio Chemical Oxygen Demand']} mg/L</Text>
-      <Text style={styles.dataText}>Nitrate: {dataPoint.Nitrate} mg/L</Text>
-      <Text style={styles.dataText}>Fecal Coliform: {dataPoint['Fecal Coliform']}</Text>
-      <Text style={styles.dataText}>Total Coliform: {dataPoint['Total Coliform']}</Text>
+      <View style={styles.dataContainer}>
+        <View style={styles.row}><Text style={styles.label}>Temperature:</Text><Text style={styles.value}>{dataPoint.Temperature}°C</Text></View>
+        <View style={styles.divider} />
+
+        <View style={styles.row}><Text style={styles.label}>pH:</Text><Text style={styles.value}>{dataPoint.pH}</Text></View>
+        <View style={styles.divider} />
+
+        <View style={styles.row}><Text style={styles.label}>Conductivity:</Text><Text style={styles.value}>{dataPoint.Conductivity} µS/cm</Text></View>
+        <View style={styles.divider} />
+
+        <View style={styles.row}><Text style={styles.label}>Dissolved Oxygen:</Text><Text style={styles.value}>{dataPoint['Dissolved Oxygen']} mg/L</Text></View>
+        <View style={styles.divider} />
+
+        <View style={styles.row}><Text style={styles.label}>Bio Chemical Oxygen Demand:</Text><Text style={styles.value}>{dataPoint['Bio Chemical Oxygen Demand']} mg/L</Text></View>
+        <View style={styles.divider} />
+
+        <View style={styles.row}><Text style={styles.label}>Nitrate:</Text><Text style={styles.value}>{dataPoint.Nitrate} mg/L</Text></View>
+        <View style={styles.divider} />
+
+        <View style={styles.row}><Text style={styles.label}>Fecal Coliform:</Text><Text style={styles.value}>{dataPoint['Fecal Coliform']}</Text></View>
+        <View style={styles.divider} />
+
+        <View style={styles.row}><Text style={styles.label}>Total Coliform:</Text><Text style={styles.value}>{dataPoint['Total Coliform']}</Text></View>
+      </View>
     </View>
   )
 }
@@ -36,34 +52,51 @@ export default CurrentLocationDetail
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // Takes up the full height of the screen
-    justifyContent: 'flex-start', // Aligns content to the top of the screen
-    alignItems: 'center', // Centers items horizontally
-    padding: 16, // Add padding for some spacing
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'stretch',
+    padding: 8,
+    backgroundColor: '#f5f5f5',
   },
   locationTitle: {
-    marginTop: 10, // Reduced marginTop to reduce the gap between the title and the data
-    fontSize: 24, // Increased font size for the location title
-    fontWeight: "bold",
-    color: "#274472", // Text color
-    textAlign: "center",
-    borderRadius: 5,
-   // Light cyan background for title (optional)
+    marginTop: 10,
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#274472',
+    textAlign: 'left',
   },
-  dateTitle:{
-    marginTop: 2, // Reduced marginTop to reduce the gap between the title and the data
-    paddingBottom:10,
-    fontSize: 15, // Increased font size for the location title
-    fontWeight: "bold",
-    color: "#274472", // Text color
-    textAlign: "center",
-    borderRadius: 5,
+  dateTitle: {
+    marginTop: 1,
+    paddingBottom: 10,
+    fontSize: 10,
+    color: '#274472',
+    textAlign: 'left',
   },
-  dataText: {
-    fontSize: 18, // Increased font size for the data text
-    fontWeight: 'bold', // Bold font for data text
-    color: "#4682B4", // Steel blue color for data text
-    marginBottom: 4, // Reduced bottom margin to reduce the gap between text
-    textAlign: 'center', // Centers text
+  dataContainer: {
+    marginTop: 8,
   },
-})
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  label: {
+    flex: 7,
+    fontSize: 15,
+    color: '#4682B4',
+    textAlign: 'left',
+  },
+  value: {
+    flex: 3,
+    fontSize: 15,
+    color: '#4682B4',
+    textAlign: 'right',
+  },
+  divider: {
+    height: 1,
+    backgroundColor: '#274472',
+    marginVertical: 1,
+    opacity: 0.7,
+  },
+});

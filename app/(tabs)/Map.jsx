@@ -14,7 +14,6 @@ export default function MapScreen() {
         options={{header:()=> <Customheader/>}}
       />
       <View >
-        <Text >Map goes here</Text>
         <MapComponent />
         <CurrentLocationDetail />
 

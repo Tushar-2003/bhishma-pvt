@@ -4,6 +4,7 @@ import React from 'react'
 import {Stack} from 'expo-router'
 import Customheader from '@/components/CustomHeader'
 import Ionicons from '@expo/vector-icons/Ionicons';
+import HomePage from '@/components/HomePage/HomePage'
 
 
 export default function HomeScreen() {
@@ -12,42 +13,8 @@ export default function HomeScreen() {
       <Stack.Screen
         options={{header:()=> <Customheader/>}}
       />
-          <View style={styles.container}>
-      <ScrollView style={styles.content}>
-        <View style={styles.summary}>
-          <Text style={styles.summaryTitle}>Today's summary @ Varanasi</Text>
-          <View style={styles.summaryBox}>
-            <Text style={styles.summaryText}>
-In the Varanasi region, the Ganga River's water quality is critically impacted by urbanization,
- with high levels of pollution and contamination from sewage and industrial effluents. 
- Despite periodic improvements due to rainfall, the river often shows elevated levels of ammonia and sulfur,
-  particularly during the dry season. These factors contribute to poor water quality, making the river's ecosystem vulnerabl
-            </Text>
-          </View>
-        </View>
-        <View style={styles.qualityReport}>
-          <Text style={styles.qualityReportTitle}>Ganga Quality report</Text>
-          {['temperature','Dissolved Oxygen', 'pH Level', 'Conductivity'].map((item, index) => (
-            <View key={index} style={styles.qualityItem}>
-              <Text style={styles.qualityText}>{item}</Text>
-              <View style={styles.qualityBar}>
-                <View style={styles.qualityBarFill} />
-              </View>
-              <Text style={styles.qualityValue}>8.2mg/L</Text>
-            </View>
-          ))}
-        </View>
-        <View style={styles.otherDataPoints}>
-          <Text style={styles.otherDataPointsTitle}>Other Data Points</Text>
-          {['Bio Chemical Oxygen Demand', 'Nitrate', 'Fecal Coliform', 'Total Coliform'].map((item, index) => (
-            <View key={index} style={styles.dataPoint}>
-              <Text style={styles.dataPointText}>{item}</Text>
-              <Text style={styles.dataPointValue}>8.2mg/L</Text>
-            </View>
-          ))}
-        </View>
-      </ScrollView>
-    </View>
+      <HomePage/>
+      {/* <DatapointComponents /> */}
     </>
   );
 }

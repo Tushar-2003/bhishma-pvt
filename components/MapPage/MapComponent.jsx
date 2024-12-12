@@ -6,7 +6,7 @@ import { useLocation } from "@/utils/LocationContext";
 
 
 
-const locations = ["Varanasi", "Haridwar", "Kolkata", "Patna", "Prayagraj"];
+const locations = ["Varanasi", "Rudrapryag", "Allahabad", "BhathingGhat", "Rishikesh"];
 
 export default function MapComponent() {
   const { currentLocation, setCurrentLocation } = useLocation();
@@ -82,6 +82,8 @@ export default function MapComponent() {
           }}
           title={coordinate.title} // Title for the marker
           description={`Location: ${coordinate.title} `} // Description for additional info
+          color="blue"
+          pinColor='#fff'
           onPress={() => {
             setCurrentLocation(coordinate.title); // Update the location in the context
           }}        
@@ -99,9 +101,10 @@ const styles = StyleSheet.create({
     width:"100%",
     height:"65%",
     alignItems:"center",
+    marginTop:"10",
   },
   map: {
-    width:"95%",
+    width:"100%",
     height:"100%",
   },
   locationTitle:{

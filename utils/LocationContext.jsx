@@ -9,10 +9,10 @@ export const LocationProvider = ({ children }) => {
   const [currentLocation, setCurrentLocation] = useState("Varanasi"); // Default location
   const [options] = useState([
     "Varanasi",
-    "Haridwar",
-    "Kolkata",
-    "Patna",
-    "Prayagraj",
+    "Rishikesh",
+    "BhathingGhat",
+    "Allahabad",
+    "Rudrapryag",
   ]);
 
   return (

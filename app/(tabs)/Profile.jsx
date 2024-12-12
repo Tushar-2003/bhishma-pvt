@@ -6,9 +6,8 @@ import Customheader from '@/components/CustomHeader'
 export default function ProfileScreen() {
 
   // Predefined variables
-  const name = "Leelam";
-  const company = "SSTC";
-  const location = "Varanasi";
+  const name = "None";
+  const team = "BHISHM";
   const handleDownload = (reportType) => {
     console.log(`${reportType} button clicked!`);
     alert(`${reportType} download initiated!`);
@@ -28,8 +27,7 @@ export default function ProfileScreen() {
         {/* Display Details */}
         <View style={styles.detailsContainer}>
           <Text style={styles.detailsText}>Name: {name}</Text>
-          <Text style={styles.detailsText}>Company Name: {company}</Text>
-          <Text style={styles.detailsText}>Location: {location}</Text>
+          <Text style={styles.detailsText}>Team Name: {team}</Text>
         </View>
         {/* Download Buttons */}
         <TouchableOpacity style={styles.button} onPress={() => handleDownload("Past 5 Yrs Report")}>
@@ -38,8 +36,8 @@ export default function ProfileScreen() {
         <TouchableOpacity style={styles.button} onPress={() => handleDownload("Future Prediction")}>
           <Text style={styles.buttonText}>Future Prediction</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => handleDownload("Company Report")}>
-          <Text style={styles.buttonText}>Company Report</Text>
+        <TouchableOpacity style={styles.button} onPress={() => handleDownload("today's Report")}>
+          <Text style={styles.buttonText}>Today's report</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => handleDownload("Govt Report")}>
           <Text style={styles.buttonText}>Govt Report</Text>

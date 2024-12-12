@@ -68,7 +68,6 @@ export default function ChatComponent(){
 
   return (
       <View style={styles.container}>
-        <Text>hi</Text>
       {isLoading && <ActivityIndicator size="large" color="#0000ff" style={styles.loadingIndicator} />}
       <GiftedChat
         messages={messages}
